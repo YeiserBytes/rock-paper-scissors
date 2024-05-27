@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Rules from './Rules'
+import ButtonClose from './ButtonClose'
 
 export default function RulesModal({
   toggleModal,
@@ -14,9 +15,7 @@ export default function RulesModal({
         <section className="flex justify-between w-full">
           <h2 className="text-3xl font-bold text-neutral-darktext">RULES</h2>
 
-          <button onClick={toggleModal}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#3B4262" fill-rule="evenodd" d="m16.97 0 2.122 2.121-7.425 7.425 7.425 7.425-2.121 2.12-7.425-7.424-7.425 7.425L0 16.97l7.425-7.425L0 2.121 2.121 0l7.425 7.425L16.971 0z" opacity=".25" /></svg>
-          </button>
+          <ButtonClose onClick={toggleModal} />
         </section>
         {type === 'Normal' ? <Rules /> : <Rules type="New" />}
         <div className="text-neutral-darktext">
