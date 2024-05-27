@@ -1,11 +1,5 @@
 import { useState } from 'react'
-import {
-  IconRock,
-  IconPaper,
-  IconScissors,
-  IconLizard,
-  IconSpock,
-} from '../assets/IconsChoices'
+import Choice from './Choice'
 import { useStore } from '../lib/store'
 import confetti from 'canvas-confetti'
 
@@ -77,26 +71,31 @@ export default function Game() {
         </svg>
       </div>
       <section className="z-0 flex flex-wrap items-center justify-center gap-2 w-[500px]">
-        <IconScissors
+        <Choice
+          variant='scissors'
           onClick={() => handleUserChoice('scissors')}
           className="scale-75"
         />
         <div className="flex justify-between w-full">
-          <IconSpock
+          <Choice
+            variant='spock'
             onClick={() => handleUserChoice('spock')}
             className="scale-75"
           />
-          <IconPaper
+          <Choice
+            variant='paper'
             onClick={() => handleUserChoice('paper')}
             className="scale-75"
           />
         </div>
         <div className="flex gap-10">
-          <IconLizard
+          <Choice
+            variant='lizard'
             onClick={() => handleUserChoice('lizard')}
             className="scale-75"
           />
-          <IconRock
+          <Choice
+            variant='rock'
             onClick={() => handleUserChoice('rock')}
             className="scale-75"
           />
