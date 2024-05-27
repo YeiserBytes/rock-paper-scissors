@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import '../App.css'
 import HeaderBanner from '../components/HeaderBanner'
 import RulesModal from '../components/RulesModal'
@@ -11,9 +11,7 @@ export default function App() {
   const { score } = useStore()
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleModal = () => {
-    setIsOpen((prev) => !prev)
-  }
+  const toggleModal = useCallback(() => setIsOpen((prev) => !prev), [])
 
   return (
     <main className="container h-screen pt-14">
@@ -21,7 +19,7 @@ export default function App() {
 
       <Game />
 
-      <section className="">
+      <section>
         <button
           className="absolute px-10 py-2 text-xl tracking-[2px] border rounded-lg bottom-10 right-10"
           onClick={toggleModal}
