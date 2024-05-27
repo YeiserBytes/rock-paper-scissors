@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Rules from '../assets/Rules'
+import Rules from './Rules'
 
 export default function RulesModal({
   toggleModal,
