@@ -31,11 +31,12 @@ export default function Game() {
       return 'lose'
     }
   }
-  const determineWinner2 = (userChoice:HandChoices, computerChoice: HandChoices) => {
-    const result = WinnerHandler(userChoice, computerChoice)
 
-    return result
-  }
+  // const determineWinner2 = (userChoice:HandChoices, computerChoice: HandChoices) => {
+  //   const result = WinnerHandler(userChoice, computerChoice)
+
+  //   return result
+  // }
 
   const handleUserChoice = (choice: 'rock' | 'paper' | 'scissors') => {
     setUserChoice(choice)
