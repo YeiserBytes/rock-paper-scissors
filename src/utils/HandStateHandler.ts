@@ -1,4 +1,7 @@
-enum HandChoices {
+import { PLAYER1, PLAYER2, TIE } from "./const.d";
+import { choiceRulesTypes } from "./types.d";
+
+export enum HandChoices {
   Rock,
   Paper,
   Scissors,
@@ -6,7 +9,7 @@ enum HandChoices {
   Spock,
 }
 
-const ChoiceRules = {
+const ChoiceRules: choiceRulesTypes = {
   [HandChoices.Rock]: [HandChoices.Scissors, HandChoices.Lizard],
   [HandChoices.Paper]: [HandChoices.Rock, HandChoices.Spock],
   [HandChoices.Scissors]: [HandChoices.Paper, HandChoices.Lizard],
@@ -14,19 +17,16 @@ const ChoiceRules = {
   [HandChoices.Spock]: [HandChoices.Scissors, HandChoices.Rock],
 };
 
-const ChoiceHandler = (
-  choice1: HandChoices,
-  choice2: HandChoices
-): HandChoices => {
+export const ChoiceHandler = (choice1: HandChoices, choice2: HandChoices): HandChoices => {
   return ChoiceRules[choice1].includes(choice2) ? choice1 : choice2;
 };
-const WinnerHandler = (
-  player1Choice: HandChoices,
-  player2Choice: HandChoices
-): String => {
-  return ChoiceRules[player1Choice].includes(player2Choice)
-    ? "Player1"
-    : ChoiceRules[player2Choice].includes(player1Choice)
-    ? "Player2"
-    : "Tie";
+
+export const WinnerHandler = (player1Choice: HandChoices, player2Choice: HandChoices): symbol => {
+  if (ChoiceRules[player1Choice].includes(player2Choice)) {
+    return PLAYER1;
+  } else if (ChoiceRules[player2Choice].includes(player1Choice)) {
+    return PLAYER2;
+  } else {
+    return TIE;
+  }
 };

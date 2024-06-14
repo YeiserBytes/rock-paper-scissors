@@ -1,8 +1,8 @@
-import IconSpock from "../assets/IconSpock"
-import IconRock from "../assets/IconRock"
-import IconPaper from "../assets/IconPaper"
-import IconScissor from "../assets/IconScissors"
-import IconLizard from "../assets/IconLizard"
+import IconSpock from "../../assets/IconSpock"
+import IconRock from "../../assets/IconRock"
+import IconPaper from "../../assets/IconPaper"
+import IconScissor from "../../assets/IconScissors"
+import IconLizard from "../../assets/IconLizard"
 
 export default function Choice({ onClick, className, variant }: { onClick: () => void, className?: string, variant: string }) {
   const variants: { [key: string]: { className: string, icon: React.ReactElement } } = {

@@ -5,7 +5,7 @@ export default function HeaderBanner({
 }: {
   score: number
   title: string[]
-  type: 'Normal' | 'Bonus'
+  type: 'Normal' | 'Expantion'
 }) {
   return (
     <header className="flex items-center justify-between py-5 border-4 px-7 rounded-2xl border-opacity-80 border-neutral-headeroutline">

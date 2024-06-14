@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Choice from './Choice'
+import Choice from './ui/Choice'
 import { useStore } from '../lib/store'
 import confetti from 'canvas-confetti'
 

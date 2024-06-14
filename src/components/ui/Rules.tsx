@@ -1,5 +1,5 @@
-import GameBonusRules from "./GameBonusRules";
-import GameRules from "./GameRules";
+import GameBonusRules from "../../assets/ExpantionRules";
+import GameRules from "../../assets/NormalRules";
 
 export default function Rules({ type = 'Normal' }: { type?: 'Normal' | 'New' }) {
   return (

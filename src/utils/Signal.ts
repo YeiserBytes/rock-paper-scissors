@@ -1,15 +1,15 @@
-class Signal {
-  private listeners: Array<Function> = [];
+export class Signal {
+  private listeners: Map<Function, Function> = new Map();
 
   public AddListener(listener: Function) {
-    this.listeners.push(listener);
+    this.listeners.set(listener, listener);
   }
 
   public RemoveListener(listener: Function) {
-    this.listeners.splice(this.listeners.indexOf(listener));
+    this.listeners.delete(listener);
   }
 
   public Emit(params: {} = {}): void {
-    this.listeners.map((listener) => listener(params));
+    this.listeners.forEach((listener) => listener(params));
   }
 }

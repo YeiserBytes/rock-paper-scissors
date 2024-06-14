@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Choice from './Choice'
+import Choice from './ui/Choice'
 import { useStore } from '../lib/store'
 import confetti from 'canvas-confetti'
 
@@ -32,12 +32,6 @@ export default function Game() {
     }
   }
 
-  // const determineWinner2 = (userChoice:HandChoices, computerChoice: HandChoices) => {
-  //   const result = WinnerHandler(userChoice, computerChoice)
-
-  //   return result
-  // }
-
   const handleUserChoice = (choice: 'rock' | 'paper' | 'scissors') => {
     setUserChoice(choice)
     const computerChoice = generateComputerChoice()
@@ -58,7 +52,7 @@ export default function Game() {
         <svg width="313" height="278" xmlns="http://www.w3.org/2000/svg">
           <path
             stroke="#000"
-            stroke-width="15"
+            strokeWidth="15"
             fill="none"
             opacity=".2"
             d="M156.5 262 300 8H13z"

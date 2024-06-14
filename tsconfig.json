@@ -6,14 +6,6 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    // Folders
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"]
-    },
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
